@@ -14,7 +14,7 @@ index = knn(k,X);
 % Set tolerance for conditioning
 delta = 0.001^2;
 
-W = eye(n);
+W = zeros(k,n);
 
 for i = 1:n
 % Calculate covariance matrix
@@ -27,6 +27,6 @@ C = C + (delta^2/k)*eye(k)*trace(C);
 % Calculate weight vector
 w = C\ones(k,1);
 
-W(index(i,:),i) = w./sum(w); 
+W(:,i) = w./sum(w); 
 
 end
