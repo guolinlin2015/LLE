@@ -11,7 +11,7 @@ k = 3;
 % [index] = knn(k,X); % knn code verified!
 
 [w,index] = LLE_weights(X,k); % verified - needed better sampling than this though
-Y = LLE_embed(w,3);
+Y = LLE_embed(w,index,3);
 
 
 % FOR LATER
@@ -54,7 +54,7 @@ figure
   [w,index] = LLE_weights(X,k);
   
   
-  Y = LLE_embed(w,2);
+  Y = LLE_embed(w,index, 2);
   subplot(1,3,3); cla;
    
   scatter(Y(:,1),Y(:,2))
