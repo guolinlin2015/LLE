@@ -7,7 +7,7 @@ function index = knn(k,X)
 [~,n] = size(X);
 
 % Calculate pairwise distances for points in X
-X2 = sum(X.^2,1);
+X2 = sum(X.^2,1); % row vector
 dist = repmat(X2,n,1) + repmat(X2',1,n) - 2*(X'*X);
 
 % Sort
@@ -21,4 +21,3 @@ else
 end
 
 return
-
